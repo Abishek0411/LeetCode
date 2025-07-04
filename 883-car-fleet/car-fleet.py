@@ -7,6 +7,7 @@ class Solution:
         for p, s in pair:  # Reverse sort order
             time = (target - p)/s
             stack.append(time)
+            # We remove the faster car from the stack.
             if len(stack) >= 2 and stack[-1] <= stack[-2]:
                 stack.pop()
         return len(stack)
